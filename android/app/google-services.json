@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "708398245294",
+    "firebase_url": "https://syksyk-81e2d.firebaseio.com",
+    "project_id": "syksyk-81e2d",
+    "storage_bucket": "syksyk-81e2d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:708398245294:android:67e9556ee27637fb4b943f",
+        "android_client_info": {
+          "package_name": "com.syksyk.syksyk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "708398245294-pbplifri52f5p230q2vg91tmfenolnm1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAB9VopIWBRyL0QYO5rfW0yAd_MG88GNpI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "708398245294-pbplifri52f5p230q2vg91tmfenolnm1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

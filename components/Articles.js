@@ -11,16 +11,19 @@ import auth from '@react-native-firebase/auth';
 const Articles = () => {
   return (
     <View style={styles.container}>
-      <View style={styles.articleContainer}>
-        <Text style={styles.heading}>Welcome to the Authorized screen</Text>
-        <Text style={styles.content}>You are logged in from Firebase</Text>
+      <Text style={styles.heading}>SYK</Text>
 
-        <TouchableOpacity
-          style={{padding: 20}}
-          onPress={() => auth().signOut()}>
-          <Text style={{color: '#1B9CFC'}}>Logout</Text>
-        </TouchableOpacity>
-      </View>
+      <TouchableOpacity style={styles.Button1} onPress={() => auth().signOut()}>
+        <Text style={{color: 'black', backgroundColor: 'white'}}>
+          매장별 검색
+        </Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.Button2} onPress={() => auth().signOut()}>
+        <Text style={{color: 'black', backgroundColor: 'white'}}>
+          사원별 검색
+        </Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -30,23 +33,45 @@ const Articles = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    position: 'relative',
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'black',
     justifyContent: 'center',
     alignItems: 'center',
   },
-  articleContainer: {
-    padding: 10,
-    borderBottomColor: 'rgba(255,255,255,.7)',
-    borderBottomWidth: 5,
-  },
+
   heading: {
-    fontSize: 22,
-    color: 'black',
-    padding: 10,
-    marginBottom: 10,
+    backgroundColor: 'red',
+    position: 'relative',
+    top: -304,
+    textAlign: 'center',
+    fontSize: 30,
+    fontWeight: 'bold',
+    width: 411,
+    color: 'white',
+    padding: 5,
   },
-  content: {
-    marginTop: 10,
-    fontSize: 19,
+
+  Button1: {
+    flex: 1,
+    width: 100,
+    height: 100,
+    textAlign: 'center',
+    position: 'absolute',
+    borderRadius: 20,
+    borderWidth: 5,
+    alignItems: 'stretch',
+  },
+  Button2: {
+    flex: 1,
+    width: 100,
+    height: 200,
+    textAlign: 'center',
+    position: 'absolute',
+    borderRadius: 20,
+    borderWidth: 5,
+    alignItems: 'stretch',
   },
 });
 

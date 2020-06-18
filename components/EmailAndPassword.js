@@ -37,6 +37,7 @@ class EmailAndPassword extends Component {
       loading: false,
     });
   };
+
   render() {
     return (
       <View style={styles.container}>

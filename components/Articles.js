@@ -2,7 +2,7 @@
 
 // eslint-disable-next-line no-unused-vars
 import React, {Component} from 'react';
-import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
+import {StyleSheet, View, Text, TouchableOpacity, Image} from 'react-native';
 import auth from '@react-native-firebase/auth';
 
 //create a component
@@ -11,19 +11,21 @@ import auth from '@react-native-firebase/auth';
 const Articles = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.heading}>SYK</Text>
+      <View style={styles.header}>
+        <Text style={styles.TextFontSize}>SYK</Text>
+      </View>
 
-      <TouchableOpacity style={styles.Button1} onPress={() => auth().signOut()}>
-        <Text style={{color: 'black', backgroundColor: 'white'}}>
-          매장별 검색
-        </Text>
+      <TouchableOpacity style={styles.btn} onPress={() => auth().signOut()}>
+        <Text style={styles.TextFontSize}>매장 별 검색</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.btn} onPress={() => auth().signOut()}>
+        <Text style={styles.TextFontSize}>사원 별 검색</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.Button2} onPress={() => auth().signOut()}>
-        <Text style={{color: 'black', backgroundColor: 'white'}}>
-          사원별 검색
-        </Text>
-      </TouchableOpacity>
+      <View>
+        <Image source={require('../assets/syk.jpg')} style={styles.Logo}/>
+      </View>
+
     </View>
   );
 };
@@ -31,48 +33,33 @@ const Articles = () => {
 // define your styles
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    position: 'relative',
-    width: '100%',
-    height: '100%',
-    backgroundColor: 'black',
+  container : {
+    width:'100%',
+    height:'100%',
+    backgroundColor: 'white'
+  },
+  header : {
+    backgroundColor: '#ffe78f',
     justifyContent: 'center',
     alignItems: 'center',
   },
-
-  heading: {
-    backgroundColor: 'red',
-    position: 'relative',
-    top: -304,
-    textAlign: 'center',
-    fontSize: 30,
-    fontWeight: 'bold',
-    width: 411,
-    color: 'white',
-    padding: 5,
+  btn : {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#dddddd',
+    width: '50%',
+    height: '30%',
+    marginTop: '15%',
+    marginLeft: '25%',
+    borderRadius: 30,
   },
-
-  Button1: {
-    flex: 1,
-    width: 100,
-    height: 100,
-    textAlign: 'center',
-    position: 'absolute',
-    borderRadius: 20,
-    borderWidth: 5,
-    alignItems: 'stretch',
+  TextFontSize: {
+    fontSize: 30
   },
-  Button2: {
-    flex: 1,
-    width: 100,
-    height: 200,
-    textAlign: 'center',
-    position: 'absolute',
-    borderRadius: 20,
-    borderWidth: 5,
-    alignItems: 'stretch',
-  },
+  Logo: {
+    resizeMode: 'contain',
+    width:100
+  }
 });
 
 export default Articles;
